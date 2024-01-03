@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" type="image/png" href="{{ asset('build/images/') }}"/>
+        <link rel="icon" type="image/png" href="{{ asset('build/images/S.A.H5.png') }}"/>
         <title>
             {% block title %}Street Art Hunter{% endblock %}
         </title>
@@ -16,7 +16,7 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    
+    {% include 'includes/_navbar2.html.twig' %}
     <body>
         {% include 'includes/_navbar1.html.twig' %}
         {% block body %}
