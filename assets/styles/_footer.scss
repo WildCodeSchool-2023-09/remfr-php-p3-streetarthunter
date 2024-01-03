@@ -1,0 +1,27 @@
+.footer {
+    background-color: var(--red);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 5rem 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer div a {
+    text-decoration: none;
+    color: var(--black);
+    font-family: var(--textF);
+}
+
+.footer-gauche {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.4rem;
+}
+
+.footer-droit {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.4rem;
+}
