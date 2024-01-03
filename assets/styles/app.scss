@@ -6,8 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import 'bootstrap/scss/bootstrap';
 @import 'root.scss';
+@import 'index.scss';
+@import '_navbar1.scss';
 
-* {
+*, ::before, ::after{
     margin: 0;
     padding: 0;
 }
