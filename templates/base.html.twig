@@ -18,9 +18,8 @@
     </head>
     {% include 'includes/_navbar2.html.twig' %}
     <body>
+        {% block body %}{% endblock %}
+        {% include 'includes/_footer.html.twig' %}
         {% include 'includes/_navbar1.html.twig' %}
-        {% block body %}
-            
-        {% endblock %}
     </body>
 </html>
