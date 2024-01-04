@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} - Profil {% endblock %}
+
+{% block body %}
+<main class='profil-main align-items-center'>
+    <div>
+        <h5 class="text-center">Gerard 2Par2</h5>
+        <h5 class="text-center">525 points</h5>
+        <h5 class="text-center">1254 ème</h5>
+    </div>
+    <div class='line-profil'></div>
+    <div>
+        <h2>Informations du compte</h2>
+        <form class='profil-form' action="">
+            <div class="d-grid gap-3 col-8 mx-auto">
+  <button class="btn btn-primary rounded-bottom" type="button">Pseudo</button>
+  <button class="btn btn-primary rounded-circle" type="button">Email</button>
+  <button class="btn btn-primary rounded-pill" type="button">Password</button>
+</div>
+        </form>
+    </div>
+</main>
+
+
+{% endblock %}

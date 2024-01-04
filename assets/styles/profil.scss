@@ -1,0 +1,24 @@
+.profil-main {
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    padding-top: 10rem;
+    font-family: var(--textF);
+}
+
+.profil-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.line-profil {
+    width: 80%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    
+}
+
+
