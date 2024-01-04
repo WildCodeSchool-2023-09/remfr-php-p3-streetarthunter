@@ -21,4 +21,16 @@
     
 }
 
+.button-profil {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 15px;
+    width: 15rem;
+    height: 2.5rem;
+    align-items: center;
+    background-color: var(--yellow);
+    margin: auto ;
+    
+}
+
 
