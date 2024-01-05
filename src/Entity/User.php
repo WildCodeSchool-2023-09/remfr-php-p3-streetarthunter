@@ -43,8 +43,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Email(
         message: 'L\'email saisi {{ value }} n\'est pas valide.',
     )]
-    #[Assert\Regex('([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.
-    [0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,})')]
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
