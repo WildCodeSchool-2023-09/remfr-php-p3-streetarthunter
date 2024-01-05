@@ -10,8 +10,17 @@
 @import '_footer.scss';
 @import 'index.scss';
 @import '_navbar1.scss';
+@import 'galery.scss';
 
 *, ::before, ::after{
     margin: 0;
     padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
