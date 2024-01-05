@@ -1,2 +1,17 @@
 //start coding by removing this file and adding yours ;)
-@import "wcs";
+@font-face {
+    font-family:'bukhari';
+    src: url('../font/BukhariScript-Regular.ttf') format('truetype')/*chrome firefox opera safari, android, ios4.2+*/
+}
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import 'navbar2';
+@import 'bootstrap/scss/bootstrap';
+@import 'root.scss';
+@import '_footer.scss';
+@import 'index.scss';
+@import '_navbar1.scss';
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+}

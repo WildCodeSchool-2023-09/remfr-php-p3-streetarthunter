@@ -10,3 +10,6 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+import './controllers/navbar'
+require('./controllers/navbar')
+require('bootstrap');
