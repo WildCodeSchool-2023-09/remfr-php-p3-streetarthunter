@@ -6,18 +6,34 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Inscription</h1>
+	<main class='register_form'>
+		<h1 class='h1-register'>Inscription</h1>
 
-	{{ form_errors(registrationForm) }}
+		<div class='label_register_form'>
+			{{ form_errors(registrationForm) }}
 
-	{{ form_start(registrationForm) }}
-	{{ form_row(registrationForm.lastname) }}
-	{{ form_row(registrationForm.firstname) }}
-	{{ form_row(registrationForm.username) }}
-	{{ form_row(registrationForm.email) }}
-	{{ form_row(registrationForm.password, {
-            label: 'Password'
-        }) }}
-	<button type="submit" class="btn">Validez votre inscription</button>
-	{{ form_end(registrationForm) }}
+			{{ form_start(registrationForm) }}
+			<div class='lastname_register_form'>
+				{{ form_row(registrationForm.lastname, { 'label':false }) }}
+			</div>
+			<div class='firstname_register_form'>
+				{{ form_row(registrationForm.firstname, { 'label':false }) }}
+			</div>
+			<div class='username_register_form'>
+				{{ form_row(registrationForm.username, { 'label':false }) }}
+			</div>
+			<div class='email_register_form'>
+				{{ form_row(registrationForm.email, { 'label':false }) }}
+			</div>
+			<div class='password_register_form'>
+				{{ form_row(registrationForm.password, { 'label':false }) }}
+			</div>
+			<div>
+				<button type="submit" class="btn_register_form">
+					Here we go!
+				</button>
+			</div>
+			{{ form_end(registrationForm) }}
+		</div>
+	</main>
 {% endblock %}

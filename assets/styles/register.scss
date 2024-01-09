@@ -1,0 +1,74 @@
+body {
+    background-color: var(--blue);
+}
+
+.h1-register {
+    color: var(--red);
+    font-family: var(--titleF);
+    display: flex;
+    align-items: center;
+}
+
+.register_form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input#registration_form_lastname {
+    background-color: var(--yellow);
+    border-radius: 0px 15px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+input#registration_form_firstname {
+    background-color: var(--yellow);
+    border-radius: 0px 15px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+input#registration_form_username {
+    background-color: var(--yellow);
+    border-radius: 0px 15px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+input#registration_form_email {
+    background-color: var(--yellow);
+    border-radius: 0px 15px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.btn_register_form {
+    border-radius: 15px;
+    margin: 5px auto;
+    background-color: var(--green);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    padding-left: 4px;
+    padding-bottom: 1px;
+}
+
+button:hover {
+    background-color: var(--red);
+}
+
+input#registration_form_password_first {
+    background-color: var(--yellow);
+    border-radius: 0px 15px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+input#registration_form_password_second {
+    background-color: var(--yellow);
+    border-radius: 0px 15px;
+    margin: 5px auto;
+    text-align: center;
+}
