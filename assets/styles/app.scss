@@ -1,8 +1,10 @@
 //start coding by removing this file and adding yours ;)
 @font-face {
-    font-family:'bukhari';
-    src: url('../font/BukhariScript-Regular.ttf') format('truetype')/*chrome firefox opera safari, android, ios4.2+*/
+    font-family: 'bukhari';
+    src: url('../font/BukhariScript-Regular.ttf') format('truetype')
+        /*chrome firefox opera safari, android, ios4.2+*/
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import 'navbar2';
 @import 'root.scss';
@@ -12,8 +14,11 @@
 @import 'index.scss';
 @import '_navbar1.scss';
 @import 'galery.scss';
+@import 'login.scss';
 
-*, ::before, ::after{
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
 }
