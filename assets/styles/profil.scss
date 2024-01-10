@@ -1,8 +1,7 @@
-.profil-main {
-    background-color: var(--blue);
+.info-profil {
     display: flex;
     flex-direction: column;
-    padding-top: 10rem;
+    padding-top: 1rem;
     font-family: var(--textF);
 }
 
@@ -16,9 +15,19 @@
     height: 5px;
     border-radius: 10px;
     background-color: var(--black);
+    margin: 1rem 0;
+}
+
+.profil-container {
     display: flex;
     align-items: center;
-    
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profil-container h2 {
+    margin-bottom: 1.5rem;
+    font-family: var(--titleF);
 }
 
 .button-profil {
@@ -30,7 +39,6 @@
     align-items: center;
     background-color: var(--yellow);
     margin: 10px auto;
-    
 }
 
 

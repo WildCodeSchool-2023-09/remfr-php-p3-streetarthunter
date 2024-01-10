@@ -3,25 +3,23 @@
 {% block title %} {{ parent() }} - Profil {% endblock %}
 
 {% block body %}
-<main class='profil-main align-items-center'>
-    <div>
+<div class='profil-container'>
+    <div class='info-profil'>
         <h5 class="text-center">Gerard 2Par2</h5>
         <h5 class="text-center">525 points</h5>
         <h5 class="text-center">1254 ème</h5>
     </div>
     <div class='line-profil'></div>
     <div>
-        <h2>Informations du compte</h2>
-           
-        <form class='all-button-profil'>
+    <h2>Informations du compte</h2>
+
+    <form class='all-button-profil'>
     <div> 
         <button class="button-profil">Pseudo</button>
         <button class="button-profil">Email</button>
         <button class="button-profil">Password</button>
     </div>   
-</form>
+    </form>
     </div>
-</main>
-
-
+</div>
 {% endblock %}
