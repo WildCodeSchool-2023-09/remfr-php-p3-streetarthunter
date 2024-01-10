@@ -25,6 +25,7 @@ input#registration_form_lastname {
     height: 2rem;
     color: var(--black);
     font-weight: bold;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 input#registration_form_firstname {
@@ -36,6 +37,8 @@ input#registration_form_firstname {
     width: 18rem;
     height: 2rem;
     font-weight: bold;
+    color: var(--black);
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 input#registration_form_username {
@@ -47,6 +50,8 @@ input#registration_form_username {
     width: 18rem;
     height: 2rem;
     font-weight: bold;
+    color: var(--black);
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 input#registration_form_email {
@@ -58,39 +63,8 @@ input#registration_form_email {
     width: 18rem;
     height: 2rem;
     font-weight: bold;
-}
-
-input#registration_form_lastname:hover {
-    background-color: var(--red);
-    transition:
-        background-color 0.5s;
     color: var(--black);
-    box-shadow: 0px 3px 0px #383E42;
-}
-
-input#registration_form_firstname:hover {
-    background-color: var(--red);
-    transition:
-        background-color 0.5s;
-    color: var(--black);
-    box-shadow: 0px 3px 0px #383E42;
-}
-
-
-input#registration_form_username:hover {
-    background-color: var(--red);
-    transition:
-        background-color 0.5s;
-    color: var(--black);
-    box-shadow: 0px 3px 0px #383E42;
-}
-
-input#registration_form_email:hover {
-    background-color: var(--red);
-    transition:
-        background-color 0.5s;
-    color: var(--black);
-    box-shadow: 0px 3px 0px #383E42;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 .btn_register_form {
@@ -107,14 +81,11 @@ input#registration_form_email:hover {
     border-width: 0;
     color: #FFFFFF;
     font-weight: bold;
-    box-shadow: 0px 3px 0px #383E42;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
-button:hover {
-    background-color: var(--red);
-    transition:
-        background-color 1s;
-    color: var(--black);
+button:active {
+    transform: translate(0em, 0.2em);
 }
 
 input#registration_form_password_first {
@@ -126,6 +97,8 @@ input#registration_form_password_first {
     width: 18rem;
     height: 2rem;
     font-weight: bold;
+    color: var(--black);
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 input#registration_form_password_second {
@@ -137,20 +110,6 @@ input#registration_form_password_second {
     width: 18rem;
     height: 2rem;
     font-weight: bold;
-}
-
-input#registration_form_password_first:hover {
-    background-color: var(--red);
-    transition:
-        background-color 0.5s;
     color: var(--black);
-    box-shadow: 0px 3px 0px #383E42;
-}
-
-input#registration_form_password_second:hover {
-    background-color: var(--red);
-    transition:
-        background-color 0.5s;
-    color: var(--black);
-    box-shadow: 0px 3px 0px #383E42;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
