@@ -3,7 +3,7 @@ body {
 }
 
 .h1-register {
-    color: var(--red);
+    color: var(--black);
     font-family: var(--titleF);
     display: flex;
     align-items: center;
@@ -20,6 +20,11 @@ input#registration_form_lastname {
     border-radius: 0px 15px;
     margin: 5px auto;
     text-align: center;
+    border-width: 0;
+    width: 18rem;
+    height: 2rem;
+    color: var(--black);
+    font-weight: bold;
 }
 
 input#registration_form_firstname {
@@ -27,6 +32,10 @@ input#registration_form_firstname {
     border-radius: 0px 15px;
     margin: 5px auto;
     text-align: center;
+    border-width: 0;
+    width: 18rem;
+    height: 2rem;
+    font-weight: bold;
 }
 
 input#registration_form_username {
@@ -34,6 +43,10 @@ input#registration_form_username {
     border-radius: 0px 15px;
     margin: 5px auto;
     text-align: center;
+    border-width: 0;
+    width: 18rem;
+    height: 2rem;
+    font-weight: bold;
 }
 
 input#registration_form_email {
@@ -41,22 +54,67 @@ input#registration_form_email {
     border-radius: 0px 15px;
     margin: 5px auto;
     text-align: center;
+    border-width: 0;
+    width: 18rem;
+    height: 2rem;
+    font-weight: bold;
+}
+
+input#registration_form_lastname:hover {
+    background-color: var(--red);
+    transition:
+        background-color 0.5s;
+    color: var(--black);
+    box-shadow: 0px 3px 0px #383E42;
+}
+
+input#registration_form_firstname:hover {
+    background-color: var(--red);
+    transition:
+        background-color 0.5s;
+    color: var(--black);
+    box-shadow: 0px 3px 0px #383E42;
+}
+
+
+input#registration_form_username:hover {
+    background-color: var(--red);
+    transition:
+        background-color 0.5s;
+    color: var(--black);
+    box-shadow: 0px 3px 0px #383E42;
+}
+
+input#registration_form_email:hover {
+    background-color: var(--red);
+    transition:
+        background-color 0.5s;
+    color: var(--black);
+    box-shadow: 0px 3px 0px #383E42;
 }
 
 .btn_register_form {
     border-radius: 15px;
-    margin: 5px auto;
     background-color: var(--green);
     text-align: center;
     display: flex;
     align-items: center;
-    width: 100px;
-    padding-left: 4px;
-    padding-bottom: 1px;
+    margin: 2rem 5rem;
+    width: 8rem;
+    height: 2rem;
+    padding: 8px;
+    padding-left: 15px;
+    border-width: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 0px 3px 0px #383E42;
 }
 
 button:hover {
     background-color: var(--red);
+    transition:
+        background-color 1s;
+    color: var(--black);
 }
 
 input#registration_form_password_first {
@@ -64,6 +122,10 @@ input#registration_form_password_first {
     border-radius: 0px 15px;
     margin: 5px auto;
     text-align: center;
+    border-width: 0;
+    width: 18rem;
+    height: 2rem;
+    font-weight: bold;
 }
 
 input#registration_form_password_second {
@@ -71,4 +133,24 @@ input#registration_form_password_second {
     border-radius: 0px 15px;
     margin: 5px auto;
     text-align: center;
+    border-width: 0;
+    width: 18rem;
+    height: 2rem;
+    font-weight: bold;
+}
+
+input#registration_form_password_first:hover {
+    background-color: var(--red);
+    transition:
+        background-color 0.5s;
+    color: var(--black);
+    box-shadow: 0px 3px 0px #383E42;
+}
+
+input#registration_form_password_second:hover {
+    background-color: var(--red);
+    transition:
+        background-color 0.5s;
+    color: var(--black);
+    box-shadow: 0px 3px 0px #383E42;
 }
