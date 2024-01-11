@@ -1,7 +1,3 @@
-body {
-    background-color: var(--blue);
-}
-
 .h1-register {
     color: var(--black);
     font-family: var(--titleF);
@@ -82,10 +78,6 @@ input#registration_form_email {
     color: #FFFFFF;
     font-weight: bold;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
-}
-
-button:active {
-    transform: translate(0em, 0.2em);
 }
 
 input#registration_form_password_first {
