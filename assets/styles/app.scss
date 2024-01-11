@@ -31,3 +31,7 @@ body {
     height: 100%;
     background-color: var(--blue);
 }
+
+button:active {
+    transform: var(--clicB);
+}

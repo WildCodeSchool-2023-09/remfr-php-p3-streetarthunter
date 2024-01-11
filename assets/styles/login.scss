@@ -1,7 +1,3 @@
-body {
-    background-color: var(--blue);
-}
-
 .h1_login {
     color: var(--black);
     font-family: var(--titleF);
@@ -60,10 +56,6 @@ body {
     border-width: 0;
     color: #FFFFFF;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
-}
-
-button:active {
-    transform: translate(0em, 0.2em);
 }
 
 .redirection_register {
