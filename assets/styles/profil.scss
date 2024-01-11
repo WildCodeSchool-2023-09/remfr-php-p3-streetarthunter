@@ -1,0 +1,46 @@
+.info-profil {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    font-family: var(--textF);
+}
+
+.profil-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.line-profil {
+    width: 80%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--black);
+    margin: 1rem 0;
+}
+
+.profil-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profil-container h2 {
+    margin-bottom: 1.5rem;
+    font-family: var(--titleF);
+}
+
+.button-profil {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 15px;
+    width: 15rem;
+    height: 2.5rem;
+    align-items: center;
+    background-color: var(--yellow);
+    margin: 10px auto;
+}
+
+
+
+
