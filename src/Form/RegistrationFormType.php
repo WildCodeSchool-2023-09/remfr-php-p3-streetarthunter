@@ -17,30 +17,36 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('lastname', TextType::class, [
-                'label' => 'Nom: ',
-                'attr' => ['placeholder' => 'Entrez votre nom']
+                'attr' => ['placeholder' => 'Nom']
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom: ',
-                'attr' => ['placeholder' => 'Entrez votre prénom']
+                'attr' => ['placeholder' => 'Prénom']
             ])
             ->add('username', TextType::class, [
-                'label' => 'Pseudo: ',
-                'attr' => ['placeholder' => 'Entrez votre pseudo']
+                'attr' => ['placeholder' => 'Pseudo']
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email: ',
-                'attr' => ['placeholder' => 'Entrez votre adresse email']
+                'attr' => ['placeholder' => 'Email']
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options' => [
-                    'label' => 'Mot de passe: ', 'mapped' => false,
-                    'attr' => ['autocomplete' => 'new-password', 'placeholder' => 'Entrez votre mot de passe']
+                    'label' => false,
+                    'mapped' => false,
+                    'attr' => [
+                        'autocomplete' => 'new-password',
+                        'placeholder' => 'Mot de passe',
+                        'class' => 'password_register_form'
+                    ]
                 ],
                 'second_options' => [
-                    'label' => 'Confirmation du mot de passe: ', 'mapped' => false,
-                    'attr' => ['autocomplete' => 'new-password', 'placeholder' => 'Entrez votre mot de passe'],
+                    'label' => false,
+                    'mapped' => false,
+                    'attr' => [
+                        'autocomplete' => 'new-password',
+                        'placeholder' => 'Confirmation mot de passe',
+                        'class' => 'password_register_form'
+                    ],
                 ],
                 'invalid_message' => 'Les mots de passe ne correspondent pas.'
             ]);
