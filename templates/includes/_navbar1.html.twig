@@ -1,42 +1,51 @@
 <div class='navbar1'>
-    <svg   viewBox="0 0 565 258" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg viewbox="0 0 565 258" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-        <path d="M1 140.626C153.5 276.67 219.444 260.511 282 250.783C336.597 242.292 528.961 107.511 565 90.954V0.00012207H1V140.626Z" fill="#FFD200"/>
+		<path d="M1 140.626C153.5 276.67 219.444 260.511 282 250.783C336.597 242.292 528.961 107.511 565 90.954V0.00012207H1V140.626Z" fill="#FFD200"/>
 
-        <path d="M1 140.626C153.5 276.67 219.444 260.511 282 250.783C336.597 242.292 528.961 107.511 565 90.954V0.00012207H1V140.626Z"/>
-        <path d="M211.37 166.416C144.235 143.203 75.7067 157.12 0 210.646V0H568V117.763C532.5 149.93 520.844 186.32 431.5 200.087C389.5 206.559 237 175.278 211.37 166.416Z" fill="#EF4042"/>
-    </svg>
+		<path d="M1 140.626C153.5 276.67 219.444 260.511 282 250.783C336.597 242.292 528.961 107.511 565 90.954V0.00012207H1V140.626Z"/>
+		<path d="M211.37 166.416C144.235 143.203 75.7067 157.12 0 210.646V0H568V117.763C532.5 149.93 520.844 186.32 431.5 200.087C389.5 206.559 237 175.278 211.37 166.416Z" fill="#EF4042"/>
+	</svg>
 
-    <div class='navbar1'>
-        <nav>
-            <img class='logo' src="{{ asset('build/images/S.A.H5.png')}}" alt="Logo de Street Art Hunter" width='100rem'>
-            <div class='navbar1-li'>
-                <a class='navbar-log' href=""><img src="{{ asset('build/images/connection.png')}}" alt="connection" width='50rem'></a>
-            </div>
-            <ul class='navbar1-ul active' id='active'>
-                <div class='menu-burger'>
-                    
-                    <li class='navbar1-li'>
-                        <a href="">Dashboard</a>
-                    </li>
-                    <li class='navbar1-li'>
-                        <a href="">Classement</a>
-                    </li>
-                    <li class='navbar1-li'>
-                        <a href="">Profil</a>
-                    </li>
-                    <li class='navbar1-li'>
-                        <a href="{{ path('app_galery')}}">Galery</a>
-                    </li>
-                </div>
-                <li class ='deconnection-navbar1 navbar1-li active' id='active-deco'>
-                    <a href="">Déconnexion</a>
-                </li>
-            </ul>
-            <div class='menu-burger-navnar1' id='burger'><img src="{{ asset('build/images/menu-burger.png')}}" alt="menu-burger" width='50rem'></div>
-            <div>
-                <h1 class="h1-navbar1">Street Art Hunter</h1>
-            </div>
-        </nav>
-    </div>
+	<div class='navbar1'>
+		<nav>
+			<img class='logo' src="{{ asset('build/images/S.A.H5.png')}}" alt="Logo de Street Art Hunter" width='100rem'>
+			<div class='navbar1-li'>
+				<a class='navbar-log' href=""><img src="{{ asset('build/images/connection.png')}}" alt="connection" width='50rem'></a>
+			</div>
+			<ul class='navbar1-ul active' id='active'>
+				<div class='menu-burger'>
+
+					<li class='navbar1-li'>
+						<a href="">Dashboard</a>
+					</li>
+					<li class='navbar1-li'>
+						<a href="">Classement</a>
+					</li>
+					<li class='navbar1-li'>
+						<a href="">Profil</a>
+					</li>
+					<li class='navbar1-li'>
+						<a href="{{ path('app_galery')}}">Galery</a>
+					</li>
+				</div>
+				{% if app.user %}
+					<li class='deconnection-navbar1 navbar1-li active' id='active-deco'>
+						<a href="{{ path('app_logout') }}">Déconnexion</a>
+					</li>
+				{% else %}
+					<li class='deconnection-navbar1 navbar1-li active' id='active-deco'>
+						<a href="{{ path('app_register') }}">Inscription</a>
+					</li>
+					<li class='deconnection-navbar1 navbar1-li active' id='active-deco'>
+						<a href="{{ path('app_login') }}">Connexion</a>
+					</li>
+				{% endif %}
+			</ul>
+			<div class='menu-burger-navnar1' id='burger'><img src="{{ asset('build/images/menu-burger.png')}}" alt="menu-burger" width='50rem'></div>
+			<div>
+				<h1 class="h1-navbar1">Street Art Hunter</h1>
+			</div>
+		</nav>
+	</div>
 </div>

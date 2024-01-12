@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-#[Route(path: '/login', name: 'app_')]
+#[Route(path: '/', name: 'app_')]
 class SecurityController extends AbstractController
 {
-    #[Route(path: '/', name: 'login')]
+    #[Route(path: 'login', name: 'login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // if ($this->getUser()) {
@@ -25,7 +25,7 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
-    #[Route(path: '/logout', name: 'logout')]
+    #[Route(path: 'logout', name: 'logout')]
     public function logout(): Response
     {
         //throw new \LogicException('This method can be blank -
