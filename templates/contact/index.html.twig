@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Contact{% endblock %}
+
+{% block body %}
+    <h2 class='h2-contact'>Contact</h2>
+    <div class='form-contact'>
+        {{ form_start(form) }}
+            <div class='contact-lastname contact-form-input'>
+                {{ form_row(form.lastname) }}
+            </div>
+            <div class='contact-form-input'>
+                {{ form_row(form.firstname) }}
+            </div>
+            <div class='contact-form-input'>
+                {{ form_row(form.mail) }}
+            </div>
+            <div class='contact-form-input'>
+                {{ form_row(form.message) }}
+            </div>
+            <button type='submit' class='contact-buttom'>Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
