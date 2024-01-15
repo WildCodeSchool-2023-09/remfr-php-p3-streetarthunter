@@ -10,20 +10,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Route('/', name: 'app_')]
+#[Route('/contact', name: 'app_')]
 class ContactController extends AbstractController
 {
-    #[Route('contact', name: 'contact')]
+    #[Route('/', name: 'contact')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($contact);
             $entityManager->flush();
-
+            
             return $this->redirectToRoute('app_home');
         }
 

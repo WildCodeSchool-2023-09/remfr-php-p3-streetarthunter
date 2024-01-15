@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ContactRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
@@ -15,16 +16,39 @@ class Contact
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit contenir au maximum {{ limit }} caractères',
+    )]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit contenir au maximum {{ limit }} caractères',
+    )]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
+    #[Assert\Email(
+        message: 'L\'adresse mail renseignée {{ value }} n\'est pas une adresse mail valide'
+    )]
     private ?string $mail = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
+    #[Assert\Length(
+        min: 50,
+        max: 500,
+        minMessage: 'Votre message est  beaucoup trop court, il doit etre superieur a {{ limit }}',
+        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit contenir au maximum {{ limit }} caractères',
+    )]
     private ?string $message = null;
+
+    
 
     public function getId(): ?int
     {
