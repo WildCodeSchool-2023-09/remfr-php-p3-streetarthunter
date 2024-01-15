@@ -1,0 +1,36 @@
+.index-main {
+    background-color: var(--blue);
+}
+
+.h2-index{
+    text-align: center;
+    font-family: var(--titleF);
+}
+
+.h3-index {
+    font-family: var(--textF);
+
+}
+
+.p-index {
+    font-family: var(--textF);
+}
+
+.card-index-1, .card-index-2 {
+    background-color: var(--yellow); 
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--red);
+}
+
+.card-index-1 {
+    border-radius: 0px 15px;
+    margin-top: 2rem;
+}
+       
+.card-index-2 {
+    border-radius: 15px 0px;
+    margin-top: 2rem;
+ }
+
+.container-index {
+   margin: 2rem; 
+}

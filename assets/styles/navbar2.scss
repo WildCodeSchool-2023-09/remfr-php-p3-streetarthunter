@@ -1,14 +1,14 @@
 .navbar2 {
-    background-color: var(--blue);
+    background-color: var(--yellow);
     position: sticky;
     bottom: 0;
-    margin-top: 103.8%;
 }
 
 .navbar2-icon-home li{
     padding: 0.4rem;
-    background-color: #FFD200;
+    background-color: var(--blue);
     border-radius: 50%;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 .navbar2 ul {
@@ -21,9 +21,10 @@
 }
 
 .navbar2-icon-carte {
-    background-color: #39B449;
+    background-color: var(--green);
     padding: 0.4rem;
     border-radius: 50%;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
 }
 
 .navbar2-profil-info {

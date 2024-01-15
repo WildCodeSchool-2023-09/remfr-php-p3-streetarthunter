@@ -1,0 +1,28 @@
+.main-galery {
+    background-color: var(--blue);
+}
+
+.card-galery img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.grid-galery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 2rem 0.5rem;
+}
+
+.h1-galery {
+    font-family: var(--titleF);
+}
+
+.card-galery p {
+    font-family: var(--textF);
+}
+
+main {
+    background-color: var(--blue);
+    text-align: center;
+}
