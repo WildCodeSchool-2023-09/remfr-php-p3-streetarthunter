@@ -19,7 +19,8 @@ class Contact
     #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit contenir au maximum {{ limit }} caractères',
+        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit 
+        contenir au maximum {{ limit }} caractères',
     )]
     private ?string $lastname = null;
 
@@ -27,28 +28,30 @@ class Contact
     #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit contenir au maximum {{ limit }} caractères',
+        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit 
+        contenir au maximum {{ limit }} caractères',
     )]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
     #[Assert\Email(
-        message: 'L\'adresse mail renseignée {{ value }} n\'est pas une adresse mail valide'
+        message: 'L\'adresse email renseignée {{ value }} n\'est pas une adresse email valide'
     )]
-    private ?string $mail = null;
+    private ?string $email = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank(message: 'Veuillez remplir le champ')]
     #[Assert\Length(
-        min: 50,
+        min: 20,
         max: 500,
         minMessage: 'Votre message est  beaucoup trop court, il doit etre superieur a {{ limit }}',
-        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit contenir au maximum {{ limit }} caractères',
+        maxMessage: 'Vous avez saisi {{ value }} caractères, cet élément doit 
+        contenir au maximum {{ limit }} caractères',
     )]
     private ?string $message = null;
 
-    
+
 
     public function getId(): ?int
     {
@@ -79,14 +82,14 @@ class Contact
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(string $mail): static
+    public function setEmail(string $email): static
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }

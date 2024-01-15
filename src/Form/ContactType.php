@@ -23,7 +23,7 @@ class ContactType extends AbstractType
                 'attr' => ['placeholder' => 'Prenom'],
                 'label' => false
             ])
-            ->add('mail', EmailType::class, [
+            ->add('email', EmailType::class, [
                 'attr' => ['placeholder' => 'email@email.fr'],
                 'label' => false
             ])

@@ -5,13 +5,11 @@
 
 .form-contact {
     padding: 1rem;
-    background-color: var(--yellow);
-    margin: 2rem 3rem;
+    margin: 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 10px 0;
 }
 
 .contact-form-input {
@@ -19,10 +17,10 @@
 }
 
 .contact-form-input input, textarea {
-    background-color: var(--red);
-    border: solid black 2px;
-    border-radius: 10px 0;
-    padding: 0.2rem;
+    background-color: var(--yellow);
+    border-radius: 0 10px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 0,2rem 0,2rem 0,4rem var(--red);
     font-family: var(--textF);
     text-align: center;
     color: var(--black);
@@ -31,8 +29,8 @@
 .contact-buttom {
     padding: 0.2rem;
     background-color: var(--green);
-    border-radius: 10px 0;
-    box-shadow: 7px var(--red);
+    border-radius: 0 10px;
+    box-shadow: 0,2rem 0,2rem 0,4rem var(--red);
     font-family: var(--textF);
     color: var(--black);
 }

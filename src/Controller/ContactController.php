@@ -23,7 +23,7 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($contact);
             $entityManager->flush();
-            
+
             return $this->redirectToRoute('app_home');
         }
 
