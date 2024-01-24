@@ -21,7 +21,6 @@ class ArtworkFixtures extends Fixture implements DependentFixtureInterface
                 ->setLatitude($faker->latitude())
                 ->setCity($faker->city())
                 ->setPoint($this->getReference('point_' . $faker->numberBetween(0, 100)))
-                ->setImage($this->getReference('image_' . $faker->numberBetween(0, 100)))
                 ->setArtist($this->getReference('artist_' . $faker->numberBetween(0, 100)));
             $manager->persist($artwork);
         }
@@ -32,7 +31,6 @@ class ArtworkFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
             PointFixtures::class,
-            ImageFixtures::class,
             ArtistFixtures::class,
         ];
     }

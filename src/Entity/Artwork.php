@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArtworkRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ArtworkRepository::class)]
@@ -25,11 +27,16 @@ class Artwork
     #[ORM\OneToOne(mappedBy: 'artwork', cascade: ['persist', 'remove'])]
     private ?Point $point = null;
 
-    #[ORM\OneToOne(mappedBy: 'artwork', cascade: ['persist', 'remove'])]
-    private ?Image $image = null;
-
     #[ORM\ManyToOne(inversedBy: 'artwork')]
     private ?Artist $artist = null;
+
+    #[ORM\OneToMany(mappedBy: 'artwork', targetEntity: Image::class)]
+    private Collection $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -94,28 +101,6 @@ class Artwork
         return $this;
     }
 
-    public function getImage(): ?Image
-    {
-        return $this->image;
-    }
-
-    public function setImage(?Image $image): static
-    {
-        // unset the owning side of the relation if necessary
-        if ($image === null && $this->image !== null) {
-            $this->image->setArtwork(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($image !== null && $image->getArtwork() !== $this) {
-            $image->setArtwork($this);
-        }
-
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getArtist(): ?Artist
     {
         return $this->artist;
@@ -124,6 +109,36 @@ class Artwork
     public function setArtist(?Artist $artist): static
     {
         $this->artist = $artist;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setArtwork($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getArtwork() === $this) {
+                $image->setArtwork(null);
+            }
+        }
 
         return $this;
     }
