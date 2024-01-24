@@ -1,0 +1,44 @@
+.h2-contact {
+    font-family: var(--titleF);
+    font-size: 2rem;
+}
+
+.form-contact {
+    padding: 1rem;
+    margin: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form-input {
+    padding: 0.7rem;
+}
+
+.contact-form-input input, textarea {
+    background-color: var(--yellow);
+    border-radius: 0 10px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--black);
+    border: none;
+}
+
+.contact-buttom {
+    padding: 0.2rem;
+    background-color: var(--green);
+    border-radius: 0 10px;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    border: none;
+    color: var(--black);
+}
+
+.contact-form-input input::placeholder, textarea::placeholder{
+    color: black;
+    opacity: 50%;
+}
