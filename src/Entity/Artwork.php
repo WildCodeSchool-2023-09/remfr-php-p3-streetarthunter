@@ -16,10 +16,10 @@ class Artwork
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $longitude = null;
+    private ?float $longitude = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $latitude = null;
+    private ?float $latitude = null;
 
     #[ORM\Column(length: 255)]
     private ?string $city = null;
@@ -46,24 +46,24 @@ class Artwork
         return $this->id;
     }
 
-    public function getLongitude(): ?string
+    public function getLongitude(): ?float
     {
         return $this->longitude;
     }
 
-    public function setLongitude(string $longitude): static
+    public function setLongitude(float $longitude): static
     {
         $this->longitude = $longitude;
 
         return $this;
     }
 
-    public function getLatitude(): ?string
+    public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
-    public function setLatitude(string $latitude): static
+    public function setLatitude(float $latitude): static
     {
         $this->latitude = $latitude;
 
