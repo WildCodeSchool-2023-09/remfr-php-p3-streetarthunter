@@ -17,4 +17,11 @@ class CarteController extends AbstractController
         $arts = $artworkRepository->findAll();
         return $this->render('carte/index.html.twig', ['arts' => $arts]);
     }
+
+    #[Route('/art/{id}', methods:['GET'], name: 'show_art')]
+    public function show(int $id, ArtworkRepository $artworkRepository): Response
+    {
+        $art = $artworkRepository->find(['id' => $id]);
+        return $this->render('arts/artwork.html.twig', ['art' => $art]);
+    }
 }

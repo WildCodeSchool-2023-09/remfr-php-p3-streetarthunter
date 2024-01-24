@@ -20,9 +20,11 @@
             {% block body %}
             {% endblock %}
         </main>
-        {% include 'includes/_footer.html.twig' %}
+        <div>
+            {% include 'includes/_footer.html.twig' %}
+            {% include 'includes/_navbar2.html.twig' %}
+        </div>
         
-        {% include 'includes/_navbar2.html.twig' %}
         
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
