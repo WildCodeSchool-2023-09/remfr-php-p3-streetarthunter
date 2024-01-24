@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ArtworkRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ArtworkRepository::class)]
@@ -24,9 +22,6 @@ class Artwork
     #[ORM\Column(length: 255)]
     private ?string $city = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'artworks')]
-    private Collection $user;
-
     #[ORM\OneToOne(mappedBy: 'artwork', cascade: ['persist', 'remove'])]
     private ?Point $point = null;
 
@@ -35,11 +30,6 @@ class Artwork
 
     #[ORM\ManyToOne(inversedBy: 'artwork')]
     private ?Artist $artist = null;
-
-    public function __construct()
-    {
-        $this->user = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -78,30 +68,6 @@ class Artwork
     public function setCity(string $city): static
     {
         $this->city = $city;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
-    {
-        return $this->user;
-    }
-
-    public function addUser(User $user): static
-    {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        $this->user->removeElement($user);
 
         return $this;
     }
