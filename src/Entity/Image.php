@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\ImageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ImageRepository::class)]
+#[Vich\Uploadable]
 class Image
 {
     #[ORM\Id]
@@ -18,6 +21,12 @@ class Image
 
     #[ORM\OneToOne(inversedBy: 'image', cascade: ['persist', 'remove'])]
     private ?Artwork $artwork = null;
+
+    #[Vich\UploadableField(mapping: "file", fileNameProperty: "photo")]
+    private ?File $file = null;
+
+    #[ORM\Column(nullable:true)]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     public function getId(): ?int
     {
@@ -44,6 +53,31 @@ class Image
     public function setArtwork(?Artwork $artwork): static
     {
         $this->artwork = $artwork;
+
+        return $this;
+    }
+
+    public function setFile(?File $photo = null): void
+    {
+        $this->file = $photo;
+
+        if ($photo) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
