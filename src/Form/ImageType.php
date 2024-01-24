@@ -17,13 +17,13 @@ class ImageType extends AbstractType
         $builder
             ->add('artwork', EntityType::class, [
                 'class' => Artwork::class,
-'choice_label' => 'id',
+        'choice_label' => 'id',
             ])
-            ->add('file',VichFileType::class, [
+            ->add('file', VichFileType::class, [
             'required' => false,
             'allow_delete' => true,
             'download_uri' => true,
-            'attr' =>['capture'=> 'environment']
+            'attr' => ['capture' => 'environment']
             ])
         ;
     }
