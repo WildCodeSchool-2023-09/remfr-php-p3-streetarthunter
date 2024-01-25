@@ -7,27 +7,27 @@
         <title>
             {% block title %}Street Art Hunter{% endblock %}
         </title>
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     
     <body>
         {% include 'includes/_navbar1.html.twig' %}
         <main>
             {% block body %}
-
             {% endblock %}
         </main>
-        {% include 'includes/_footer.html.twig' %}
+        <div>
+            {% include 'includes/_footer.html.twig' %}
+            {% include 'includes/_navbar2.html.twig' %}
+        </div>
         
-        {% include 'includes/_navbar2.html.twig' %}
         
-        
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
