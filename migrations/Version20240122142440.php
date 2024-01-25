@@ -21,13 +21,11 @@ final class Version20240122142440 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE artwork CHANGE longitude longitude DOUBLE PRECISION NOT NULL, CHANGE latitude latitude DOUBLE PRECISION NOT NULL');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_8D93D649F85E0677 ON user (username)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP INDEX UNIQ_8D93D649F85E0677 ON user');
         $this->addSql('ALTER TABLE artwork CHANGE longitude longitude VARCHAR(255) NOT NULL, CHANGE latitude latitude VARCHAR(255) NOT NULL');
     }
 }
