@@ -1,13 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}{{ parent() }} - Modifier l'utilisateur {% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+    <h1>Modifier l'utilisateur</h1>
 
-    {{ include('admin/admin_user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/admin_user/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <a href="{{ path('app_admin_user_index') }}">back to list</a>
-
-    {{ include('admin/admin_user/_delete_form.html.twig') }}
+    <a href="{{ path('app_admin_user_index') }}">Revenir a la liste</a>
 {% endblock %}

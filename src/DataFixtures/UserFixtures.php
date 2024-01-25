@@ -24,7 +24,8 @@ class UserFixtures extends Fixture
                 ->setFirstname($faker->firstName())
                 ->setUserName($faker->firstName() . $i)
                 ->setPassword($this->userPassHasher->hashPassword($user, $faker->password()))
-                ->setEmail($faker->email());
+                ->setEmail($faker->email())
+                ->setRoles(['ROLE_USER']);
             $manager->persist($user);
             $this->addReference('user_' . $i, $user);
         }
