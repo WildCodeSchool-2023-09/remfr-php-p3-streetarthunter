@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\Image;
 use App\Form\ImageType;
 use App\Repository\ImageRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +16,6 @@ class CameraController extends AbstractController
 {
     #[Route('/camera', name: 'app_camera')]
     public function index(
-        ImageRepository $imageRepository,
         Request $request,
         EntityManagerInterface $entityManager
     ): Response {
@@ -24,7 +23,7 @@ class CameraController extends AbstractController
         $form = $this->createForm(ImageType::class, $image);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $image-> setUpdatedAt(new DateTimeImmutable());
+           // $image-> setUpdatedAt(new DateTime());
             $entityManager->persist($image);
             $entityManager->flush();
             return $this->redirectToRoute('user_profil');
