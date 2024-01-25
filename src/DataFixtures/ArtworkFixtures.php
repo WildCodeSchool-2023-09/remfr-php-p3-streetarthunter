@@ -23,6 +23,7 @@ class ArtworkFixtures extends Fixture implements DependentFixtureInterface
                 ->setPoint($this->getReference('point_' . $faker->numberBetween(0, 100)))
                 ->setArtist($this->getReference('artist_' . $faker->numberBetween(0, 100)));
             $manager->persist($artwork);
+            $this->addReference('artwork_' . $i, $artwork);
         }
         $manager->flush();
     }
