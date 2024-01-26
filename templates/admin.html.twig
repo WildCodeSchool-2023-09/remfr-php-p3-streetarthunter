@@ -17,8 +17,9 @@
 
 	<body>
 
-		<main class='admin-main'> {% block body %}{% endblock %}
-			</main>
+		<main class='admin-main'> 
+			{% block body %}{% endblock %}
+		</main>
 
 			{% block javascripts %}
 				{{ encore_entry_script_tags('admin') }}

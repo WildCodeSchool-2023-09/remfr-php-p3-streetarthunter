@@ -4,3 +4,48 @@
     text-align: center;
     margin: 2rem;
 }
+
+.table-user {
+    margin: 1rem 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-user thead th {
+    padding: 0.2rem 0.7rem;
+    background-color: rgb(216, 216, 216);
+}
+
+.table-user thead tr {
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.table-user tbody td {
+    font-family: var(--textF);
+    padding: 0.2rem 2rem;
+    text-align: center;
+    margin: 0.4rem;
+
+}
+
+.table-user tbody tr {
+    border-bottom: solid 2px black;
+}
+
+.table-user table {
+    border-radius: 10px;
+    background-color: white;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td.actions-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
