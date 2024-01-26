@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use DateTime;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ImageRepository;
 use Symfony\Component\HttpFoundation\File\File;
@@ -26,7 +27,7 @@ class Image
     #[Vich\UploadableField(mapping: "file", fileNameProperty: "photo")]
     private ?File $file = null;
 
-    #[ORM\Column(nullable:true)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
 
     public function getId(): ?int
