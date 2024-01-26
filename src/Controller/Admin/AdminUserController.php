@@ -54,8 +54,7 @@ class AdminUserController extends AbstractController
     $entityManager, ImageRepository $imageRepository): Response
     {
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-            $images = $imageRepository->find($user->getId());
-            $user->removeImage($images);
+
             $entityManager->remove($user);
             $entityManager->flush();
         }
