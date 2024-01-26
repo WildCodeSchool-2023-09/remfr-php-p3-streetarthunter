@@ -64,12 +64,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\ManyToMany(targetEntity: Artwork::class, mappedBy: 'user')]
-    private Collection $artworks;
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Image::class)]
+    private Collection $images;
 
     public function __construct()
     {
-        $this->artworks = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -126,33 +126,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Artwork>
-     */
-    public function getArtworks(): Collection
-    {
-        return $this->artworks;
-    }
-
-    public function addArtwork(Artwork $artwork): static
-    {
-        if (!$this->artworks->contains($artwork)) {
-            $this->artworks->add($artwork);
-            $artwork->addUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeArtwork(Artwork $artwork): static
-    {
-        if ($this->artworks->removeElement($artwork)) {
-            $artwork->removeUser($this);
-        }
-
-        return $this;
-    }
-
-    /**
      * A visual identifier that represents this user.
      *
      * @see UserInterface
@@ -203,5 +176,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getUser() === $this) {
+                $image->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
