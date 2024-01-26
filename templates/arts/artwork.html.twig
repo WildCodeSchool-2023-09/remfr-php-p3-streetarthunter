@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - artwork
+{% endblock %}
+
+{% block body %}
+    <h1>{{ art.latitude }}, {{ art.longitude }}, {{ art.city }}</h1>
+    <a href="#">Valider l'oeuvre</a>
+{% endblock %}

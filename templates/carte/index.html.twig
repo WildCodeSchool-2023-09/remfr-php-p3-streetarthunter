@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CarteController!{% endblock %}
+
+{% block stylesheets %}
+     {{ parent() }}
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+{% endblock %}
+
+{% block javascripts %}
+     {{ parent() }}
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin="">
+     </script> 
+     <script> 
+          let map = L.map('map').setView([44.834330, -0.589432], 10);
+
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               maxZone: 19,
+               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+               }).addTo(map);
+
+               let graphIcon = L.icon({
+                    iconUrl: "{{ asset('build/images/graphIcon.png') }}",
+                    shadowUrl: "{{ asset('build/images/ombreIcon.png') }}",
+
+                    iconSize:     [80, 95], // size of the icon
+                    shadowSize:   [40, 64], // size of the shadow
+                    iconAnchor:   [40, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [10, 69],  // the same for the shadow
+                    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+               });
+          
+          {% for art in arts %}
+               L.marker([{{art.longitude}}, {{art.latitude}}], {icon: graphIcon}).addEventListener('click', () => window.location = "{{ path('app_show_art', {id: art.id}) }}").addTo(map);
+          {% endfor %}
+     </script>
+{% endblock %}
+
+{% block body %}
+<div id='map'></div>
+{% endblock %}

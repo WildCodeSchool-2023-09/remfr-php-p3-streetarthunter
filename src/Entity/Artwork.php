@@ -24,21 +24,18 @@ class Artwork
     #[ORM\Column(length: 255)]
     private ?string $city = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'artworks')]
-    private Collection $user;
-
     #[ORM\OneToOne(mappedBy: 'artwork', cascade: ['persist', 'remove'])]
     private ?Point $point = null;
-
-    #[ORM\OneToOne(mappedBy: 'artwork', cascade: ['persist', 'remove'])]
-    private ?Image $image = null;
 
     #[ORM\ManyToOne(inversedBy: 'artwork')]
     private ?Artist $artist = null;
 
+    #[ORM\OneToMany(mappedBy: 'artwork', targetEntity: Image::class)]
+    private Collection $images;
+
     public function __construct()
     {
-        $this->user = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,30 +79,6 @@ class Artwork
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
-    {
-        return $this->user;
-    }
-
-    public function addUser(User $user): static
-    {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        $this->user->removeElement($user);
-
-        return $this;
-    }
-
     public function getPoint(): ?Point
     {
         return $this->point;
@@ -128,28 +101,6 @@ class Artwork
         return $this;
     }
 
-    public function getImage(): ?Image
-    {
-        return $this->image;
-    }
-
-    public function setImage(?Image $image): static
-    {
-        // unset the owning side of the relation if necessary
-        if ($image === null && $this->image !== null) {
-            $this->image->setArtwork(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($image !== null && $image->getArtwork() !== $this) {
-            $image->setArtwork($this);
-        }
-
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getArtist(): ?Artist
     {
         return $this->artist;
@@ -158,6 +109,36 @@ class Artwork
     public function setArtist(?Artist $artist): static
     {
         $this->artist = $artist;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setArtwork($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getArtwork() === $this) {
+                $image->setArtwork(null);
+            }
+        }
 
         return $this;
     }
