@@ -4,22 +4,51 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use App\Form\UserType;
-use App\Repository\ImageRepository;
 use App\Repository\UserRepository;
+use App\Repository\ImageRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 
 #[Route('/admin/user')]
 class AdminUserController extends AbstractController
 {
     #[Route('/', name: 'app_admin_user_index', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
-    {
+    public function index(
+        UserRepository $userRepository,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response {
+        $form = $this->createFormBuilder(null, [
+            'method' => 'get'
+        ])
+            ->add('search', SearchType::class, [
+                'label' => false,
+                'attr' => ['placeholder' => 'Recherche']
+            ])
+            ->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->get('search')->getData();
+            $query = $userRepository->findByUsername($search);
+        } else {
+            $query = $userRepository->queryFindAll();
+        }
+
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1), /*page number*/
+            14 /*limit per page*/
+        );
+
         return $this->render('admin/admin_user/index.html.twig', [
-            'users' => $userRepository->findAll(),
+            'users' => $pagination,
+            'form' => $form
         ]);
     }
 
