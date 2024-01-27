@@ -43,7 +43,7 @@ class AdminUserController extends AbstractController
         $pagination = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1), /*page number*/
-            14 /*limit per page*/
+            10 /*limit per page*/
         );
 
         return $this->render('admin/admin_user/index.html.twig', [
