@@ -100,3 +100,65 @@ td.actions-user {
     background-color: black;
     color: white;
 }
+
+
+/* Partie show-user */
+
+.show-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 25%;
+    padding: 2rem;
+    border: 4px black solid;
+    border-radius: 10px;
+    background-color: var(--green);
+}
+
+.carte-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--textF);
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+
+.carte-user-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.5rem;
+}
+
+.line-user-show {
+    width: 4px;
+    height: 5rem;
+    background-color: black;
+}
+
+.carte-user-gauche {
+    padding: 1rem 5rem;
+    margin: 2rem;
+}
+
+.carte-user-droite {
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.carte-user-content h4 {
+    margin: 0.5rem;
+}
+
+.lien-carte-user {
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    color: white;
+    margin: 0 4rem;
+}
