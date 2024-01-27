@@ -16,11 +16,11 @@ class Image
     #[ORM\Column(length: 500)]
     private ?string $photo = null;
 
-    #[ORM\OneToOne(inversedBy: 'image', cascade: ['persist', 'remove'])]
-    private ?Artwork $artwork = null;
-
     #[ORM\ManyToOne(inversedBy: 'images')]
     private ?User $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Artwork $artwork = null;
 
     public function getId(): ?int
     {
@@ -39,18 +39,6 @@ class Image
         return $this;
     }
 
-    public function getArtwork(): ?Artwork
-    {
-        return $this->artwork;
-    }
-
-    public function setArtwork(?Artwork $artwork): static
-    {
-        $this->artwork = $artwork;
-
-        return $this;
-    }
-
     public function getUser(): ?User
     {
         return $this->user;
@@ -59,6 +47,18 @@ class Image
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getArtwork(): ?Artwork
+    {
+        return $this->artwork;
+    }
+
+    public function setArtwork(?Artwork $artwork): static
+    {
+        $this->artwork = $artwork;
 
         return $this;
     }

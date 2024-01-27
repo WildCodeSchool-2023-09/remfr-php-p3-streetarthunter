@@ -17,7 +17,8 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
             $image = new Image();
             $image
                 ->setPhoto($faker->imageUrl(640, 480, 'animals', true))
-                ->setUser($this->getReference('user_' . $faker->numberBetween(0, 50)));
+                ->setUser($this->getReference('user_' . $faker->numberBetween(0, 50)))
+                ->setArtwork($this->getReference('artwork_' . $faker->numberBetween(0, 100)));
             $manager->persist($image);
             $this->addReference('image_' . $i, $image);
         }
@@ -28,6 +29,7 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
             UserFixtures::class,
+            ArtworkFixtures::class,
         ];
     }
 }
