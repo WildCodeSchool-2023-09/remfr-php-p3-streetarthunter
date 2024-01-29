@@ -14,17 +14,17 @@ class ImageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder
-            ->add('artwork', EntityType::class, [
+                $builder
+                ->add('artwork', EntityType::class, [
                 'class' => Artwork::class,
-        'choice_label' => 'id',
-            ])
-            ->add('file', VichFileType::class, [
-            'required' => false,
-            'allow_delete' => true,
-            'download_uri' => true,
-            'attr' => ['capture' => 'environment']
-            ])
+                'choice_label' => 'id',
+                ])
+                ->add('file', VichFileType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'download_uri' => true,
+                'attr' => ['capture' => 'environment','class' => 'button-camera' ]
+                ])
         ;
     }
 

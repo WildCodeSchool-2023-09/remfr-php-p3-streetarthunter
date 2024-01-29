@@ -1,10 +1,11 @@
 .button-camera {
-    font-size: 17px;
-        padding: 0.5em 2em;
-        border: transparent;
-        box-shadow: 2px 2px 4px var(--yellow);
-        background: var(--red);
-        color: white;
-        border-radius: 4px;
-        
+    background-color: var(--yellow);
+    font-family: var(--textF);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border: transparent;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
+    border-radius: 0.3rem;
+    margin-left: 1rem;
 }
+

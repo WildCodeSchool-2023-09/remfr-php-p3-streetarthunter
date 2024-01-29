@@ -5,10 +5,12 @@
 
 {% block body %}
 
-	<div class="example-wrapper">
-		
 		{{form_start(form)}}
-        <button type="submit"class=button-camera> envoyer photo </button>
+        {{ form_row(form.file, { 
+        label: 'Logo',
+        'attr': {'class': 'button-camera'}
+    }) }}
+        <button type="submit" class=button-camera> envoyer photo </button>
         {{form_end(form)}}
-	</div>
+	
 {% endblock %}
