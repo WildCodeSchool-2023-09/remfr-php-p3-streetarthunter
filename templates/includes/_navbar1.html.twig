@@ -10,15 +10,19 @@
 	<div class='navbar1'>
 		<nav>
 			<img class='logo' src="{{ asset('build/images/S.A.H5.png')}}" alt="Logo de Street Art Hunter" width='100rem'>
-			<div class='navbar1-li'>
-				<a class='navbar-log' href="{{ path('app_login') }}"><img src="{{ asset('build/images/connection.png')}}" alt="connection" width='50rem'></a>
-			</div>
+			{% if not app.user %}
+				<div class='navbar1-li'>
+					<a class='navbar-log' href="{{ path('app_login') }}"><img src="{{ asset('build/images/connection.png')}}" alt="connection" width='50rem'></a>
+				</div>
+			{% endif %}
+			
 			<ul class='navbar1-ul' id='active'>
 				<div class='menu-burger'>
-
+					{% if is_granted('ROLE_ADMIN') %}
 					<li class='navbar1-li'>
 						<a href="">Dashboard</a>
 					</li>
+					{% endif %}
 					<li class='navbar1-li'>
 						<a href="{{ path('app_ranking') }}">Classement</a>
 					</li>
@@ -33,12 +37,12 @@
 				</div>
 				{% if app.user  %}
 					<li class='deconnection-navbar1 navbar1-li active' id='active-deco'>
-						<a href="{{ path('app_home')}}">Déconnexion</a>
+						<a href="{{ path('app_logout')}}">Déconnexion</a>
 					</li>
 				{% else %}
-					<li class='deconnection-navbar1 navbar1-li active' id='active-connection'>
+					{# <li class='deconnection-navbar1 navbar1-li active' id='active-connection'>
 						<a href="{{ path('app_login')}}">Connexion</a>
-					</li>
+					</li> #}
 					<li class='deconnection-navbar1 navbar1-li active' id='active-register'>
 						<a href="{{ path('app_register')}}">Inscription</a>
 					</li>

@@ -17,31 +17,31 @@ button:active {
     transform: translate(0em, 0.2em);
 }
 
-table {
+table.ranking-table {
     width: 25rem;
     margin: 1.5rem auto;
     border-collapse: separate;
     border-spacing: 0.3rem; 
 }
 
-tr:nth-child(odd) {
+table.ranking-table tr:nth-child(odd) {
     background-color: var(--green)
 }
 
-tr:nth-child(even) {
+table.ranking-table tr:nth-child(even) {
     background-color: var(--yellow);
 }
 
-td {
+table.ranking-table td {
     vertical-align: top;
     padding: 0.5rem 1rem;
     font-family: var(--textF);
 }
 
-td:first-child {
+table.ranking-table td:first-child {
     text-align: center;
 }
 
-td:not(:first-child) {
+table.ranking-table td:not(:first-child) {
     text-align: left;
 }

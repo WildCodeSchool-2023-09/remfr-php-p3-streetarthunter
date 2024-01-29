@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/carte', name: 'app_')]
+#[Route('/profil/carte', name: 'app_')]
 class CarteController extends AbstractController
 {
     #[Route('/', name: 'carte')]
