@@ -5,19 +5,25 @@
 {% block body %}
 <div class='profil-container'>
     <div class='info-profil'>
-        <h5 class="text-center">{{ user.username }}</h5>
+        <h5 class="text-center">{{ app.user.username }}</h5>
         <h5 class="text-center">525 points</h5>
         <h5 class="text-center">1254 ème</h5>
     </div>
     <div class='line-profil'></div>
     <div>
-    <h2>Informations du compte</h2>
-
-    <form class='all-button-profil'>
-        <div> 
-            
-        </div>   
-    </form>
+        <h2>Informations du compte</h2>
+        <div class='form-profil'>
+            {{ form_start(form) }}
+                <div class='form-profil-input'>
+                    {{ form_row(form.username, {'attr': {'value' : app.user.username}}) }}
+                </div>
+                <div class='form-profil-input'>
+                    {{ form_row(form.email, {'attr': {'value' : app.user.email}}) }}
+                </div>
+                <button class='profil-button' type='submit'>Valider</button>
+            {{ form_end(form) }}
+        </div>
+        
     </div>
 </div>
 {% endblock %}

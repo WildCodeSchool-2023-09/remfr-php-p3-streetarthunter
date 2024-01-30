@@ -41,6 +41,32 @@
     margin: 10px auto;
 }
 
+.form-profil {
+    margin-bottom: 1rem;
+}
 
+.form-profil-input{
+    margin: 1rem;
+}
 
+.form-profil-input input{
+    background-color: var(--yellow);
+    border-radius: 0 10px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--black);
+    border: none;
+}
 
+.profil-button {
+    padding: 0.2rem;
+    background-color: var(--green);
+    border-radius: 0 10px;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    border: none;
+    color: var(--black);
+}
