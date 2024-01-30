@@ -1,0 +1,28 @@
+<div class='user-edit-content'>
+    {{ form_start(form) }}
+    <div class='user-edit-flex'>
+        <div class='user-edit-input'>
+            {{ form_row(form.username) }}
+        </div>
+        <div class='user-edit-input'>
+            {{ form_row(form.lastname) }}
+        </div>
+    </div>
+    <div class='user-edit-flex'>
+        <div class='user-edit-input'>
+            {{ form_row(form.firstname) }}
+        </div>
+    </div>
+    <div class='user-edit-flex'>
+        <div class='user-edit-input'>
+            {{ form_row(form.email) }}
+        </div>
+        <div class='user-edit-input'>
+            {{ form_row(form.roles) }}
+        </div>
+    </div>
+        
+        <button class="save-user-edit">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>
+

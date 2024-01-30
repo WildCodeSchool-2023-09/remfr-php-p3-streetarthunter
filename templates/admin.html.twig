@@ -5,23 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/png" href="{{ asset('build/images/S.A.H5.png') }}"/>
 		<title>
-			{% block title %}Street Art Hunter
+			{% block title %}Admin
 			{% endblock %}
 		</title>
+
 		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
+			{{ encore_entry_link_tags('admin') }}
 		{% endblock %}
 
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
 	</head>
 
 	<body>
-		<main>
+
+		<main class='admin-main'> 
 			{% block body %}{% endblock %}
 		</main>
 
-
-	</body>
-</html>
+			{% block javascripts %}
+				{{ encore_entry_script_tags('admin') }}
+			{% endblock %}
+		</body>
+	</html>
