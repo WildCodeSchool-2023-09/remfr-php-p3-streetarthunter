@@ -1,0 +1,17 @@
+.admin-messages-h1 {
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.table-messages {
+    background-color: white;
+    margin: 1rem 3rem;
+    border-radius: 20px;
+    padding: 0.5rem;
+}
+
+.table-messages tbody td {
+    border-bottom: black 1px solid;
+}
