@@ -2,8 +2,6 @@
 
 namespace App\Form;
 
-
-
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use App\Entity\Artwork;
 use App\Entity\Image;
@@ -17,7 +15,6 @@ class ImageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-
                 $builder
                 ->add('artwork', EntityType::class, [
                 'class' => Artwork::class,
@@ -28,9 +25,7 @@ class ImageType extends AbstractType
                 'allow_delete' => true,
                 'download_uri' => true,
                 'attr' => ['capture' => 'environment','class' => 'button-camera' ]
-                ])
-        ;
-
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
