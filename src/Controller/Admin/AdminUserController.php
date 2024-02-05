@@ -78,19 +78,6 @@ class AdminUserController extends AbstractController
         ]);
     }
 
-    /*#[Route('/{id}', name: 'app_admin_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, EntityManagerInterface
-    $entityManager, ImageRepository $imageRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-
-            $entityManager->remove($user);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
-    }*/
-
     #[Route('/{id}', name: 'app_admin_user_delete', methods: ['POST'])]
     public function delete(
         Request $request,
