@@ -13,10 +13,8 @@ class UserFixtures extends Fixture
     public function __construct(private UserPasswordHasherInterface $userPassHasher)
     {
     }
-
     public function load(ObjectManager $manager): void
     {
-
         /* fakers */
         $faker = Factory::create('fr_FR');
         for ($i = 0; $i < 51; $i++) {
@@ -26,11 +24,11 @@ class UserFixtures extends Fixture
                 ->setFirstname($faker->firstName())
                 ->setUserName($faker->firstName() . $i)
                 ->setPassword($this->userPassHasher->hashPassword($user, $faker->password()))
-                ->setEmail($faker->email());
+                ->setEmail($faker->email())
+                ->setRoles(['ROLE_USER']);
             $manager->persist($user);
             $this->addReference('user_' . $i, $user);
         }
-
         /* test Admin demo */
         $admin = new User();
         $admin
@@ -41,7 +39,6 @@ class UserFixtures extends Fixture
             ->setEmail('admin@admin.com')
             ->setRoles(['ROLE_ADMIN']);
         $manager->persist($admin);
-
         /* test User demo */
         $testUser = new User();
         $testUser
@@ -51,7 +48,6 @@ class UserFixtures extends Fixture
             ->setPassword($this->userPassHasher->hashPassword($testUser, 'TestUser'))
             ->setEmail('testuser@testuser.com');
         $manager->persist($testUser);
-
         $manager->flush();
     }
 }
