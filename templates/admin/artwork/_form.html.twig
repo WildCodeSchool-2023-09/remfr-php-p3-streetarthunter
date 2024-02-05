@@ -1,0 +1,27 @@
+<div class="formArtwork-style">
+	{{ form_start(formArtwork) }}
+	<div class="new-artwork">
+		{{ form_row(formArtwork.longitude) }}
+	</div>
+	<div class="new-artwork">
+		{{ form_row(formArtwork.latitude) }}
+	</div>
+	<div class="new-artwork">
+		{{ form_row(formArtwork.city) }}
+	</div>
+
+	<div class="new-artwork">
+		{{ form_row(formArtwork.image) }}
+	</div>
+	<div class="new-artwork">
+		{{ form_row(formArtwork.point) }}
+	</div>
+	<div class="new-artwork">
+		{{ form_row(formArtwork.artist) }}
+	</div>
+
+	<div class="new-artwork-button">
+		<button type="submit" class="button-new-artwork">{{ button_label|default('Enregistrer') }}</button>
+	</div>
+	{{ form_end(formArtwork) }}
+</div>

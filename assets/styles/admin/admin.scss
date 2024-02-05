@@ -1,24 +1,16 @@
 //start coding by removing this file and adding yours ;)
 @font-face {
     font-family: 'bukhari';
-    src: url('../font/BukhariScript-Regular.ttf') format('truetype')
-
+    src: url('../../font/BukhariScript-Regular.ttf') format('truetype')
+        /*chrome firefox opera safari, android, ios4.2+*/
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import 'navbar2';
-@import 'root.scss';
+@import '../root.scss';
 @import 'bootstrap/scss/bootstrap';
-@import '_footer.scss';
-@import 'index.scss';
-@import '_navbar1.scss';
-@import 'profil.scss';
-@import 'galery.scss';
-@import 'contact.scss';
-@import 'legal.scss';
-@import 'login.scss';
-@import 'ranking.scss';
-@import 'register.scss';
+@import 'dashboard.scss';
+@import 'artwork.scss';
+@import '_formArtwork.scss';
 
 
 *,
@@ -34,7 +26,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: var(--blue);
 }
 
 button:active {
