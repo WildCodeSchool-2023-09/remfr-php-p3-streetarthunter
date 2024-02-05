@@ -19,7 +19,9 @@
 @import 'login.scss';
 @import 'ranking.scss';
 @import 'register.scss';
-
+@import 'dashboard.scss';
+@import 'carte.scss';
+@import 'camera.scss';
 
 *,
 ::before,
@@ -33,7 +35,7 @@ body {
     grid-template-rows: auto 1fr auto;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     background-color: var(--blue);
 }
 

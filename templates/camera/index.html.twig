@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camera
+{% endblock %}
+
+{% block body %}
+
+		{{form_start(form)}}
+        {{ form_row(form.file, { 
+        label: 'Logo',
+        'attr': {'class': 'button-camera'}
+    }) }}
+        <button type="submit" class=button-camera> envoyer photo </button>
+        {{form_end(form)}}
+	
+{% endblock %}

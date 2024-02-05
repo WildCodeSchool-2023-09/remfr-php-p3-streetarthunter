@@ -1,0 +1,232 @@
+.h1-adminUser {
+    font-family: var(--titleF);
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem;
+}
+
+.table-user {
+    margin: 1rem 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-user thead th {
+    padding: 0.2rem 0.7rem;
+    background-color: rgb(216, 216, 216);
+}
+
+.table-user thead tr {
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.table-user tbody td {
+    font-family: var(--textF);
+    padding: 0.2rem 2rem;
+    text-align: center;
+    margin: 0.4rem;
+
+}
+
+.table-user tbody tr {
+    border-bottom: solid 2px black;
+}
+
+.table-user table {
+    border-radius: 10px;
+    background-color: white;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td.actions-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulaire-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulaire-user input {
+    background-color: var(--yellow);
+    border-radius: 0 10px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--black);
+    border: none;
+    margin: 1rem;
+}
+
+.formulaire-user button {
+    padding: 0.2rem 1rem;
+    background-color: var(--green);
+    border-radius: 0 10px;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.2rem;
+    border: none;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.navigation-user {
+    font-family: var(--textF);
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.navigation-user a {
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+
+.navigation-user a:focus {
+    background-color: black;
+    color: white;
+}
+
+
+/* Partie show-user */
+
+.show-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 25%;
+    padding: 2rem;
+    border: 4px black solid;
+    border-radius: 10px;
+    background-color: var(--green);
+}
+
+.carte-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--textF);
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+
+.carte-user-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.5rem;
+}
+
+.line-user-show {
+    width: 4px;
+    height: 5rem;
+    background-color: black;
+}
+
+.carte-user-gauche {
+    padding: 1rem 5rem;
+    margin: 2rem;
+}
+
+.carte-user-droite {
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.carte-user-content h4 {
+    margin: 0.5rem;
+}
+
+.lien-carte-user {
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    color: white;
+    margin: 0 4rem;
+}
+
+/* Partie edit user */
+
+.save-user-edit {
+    padding: 0.2rem 1rem;
+    background-color: var(--green);
+    border-radius: 0 10px;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.2rem;
+    border: none;
+    color: var(--black);
+    margin: 2rem;
+}
+
+.user-edit-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-edit-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.user-edit-input input{
+    background-color: var(--yellow);
+    border-radius: 0 10px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--black);
+    border: none;
+}
+
+.user-edit-input select {
+    background-color: var(--yellow);
+    border-radius: 0 10px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 3px 3px 7px var(--red);
+    font-family: var(--textF);
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--black);
+    border: none;
+}
+
+.user-edit-input label {
+    margin: 0 1rem;
+    text-align: center;
+    font-family: var(--textF);
+    font-size: 1.2rem;
+
+}
+
+.user-edit-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 1rem;
+}
