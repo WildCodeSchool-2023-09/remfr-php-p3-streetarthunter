@@ -1,0 +1,24 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <h1 class='admin-messages-h1'>Contact</h1>
+    <div class='message-show-container'>
+        <h2>Id: {{ contact.id }}</h2>
+        <h2>Nom: {{ contact.lastname }}</h2>
+        <h2>Prénom: {{ contact.firstname }}</h2>
+        <h2>Email: {{ contact.email }}</h2>
+        <div>
+            <h2>Message: </h2>
+            <p>{{ contact.message }}</p>
+        </div>
+        
+    </div>
+    <div class='link-message-container'>
+        <a href="{{ path('app_admin_contact_index') }}" class='link-message'>Retour a la liste</a>
+
+        {{ include('admin/admin_contact/_delete_form.html.twig') }}
+    </div>
+    
+{% endblock %}

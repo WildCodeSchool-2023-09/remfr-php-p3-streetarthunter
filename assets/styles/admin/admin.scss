@@ -8,6 +8,7 @@
 @import '../root.scss';
 
 
+
 *,
 ::before,
 ::after {
@@ -25,3 +26,4 @@ body {
 }
 
 @import 'adminUser.scss';
+@import 'adminMessage.scss';

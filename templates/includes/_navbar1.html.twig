@@ -9,7 +9,7 @@
 
 	<div class='navbar1'>
 		<nav>
-			<img class='logo' src="{{ asset('build/images/S.A.H5.png')}}" alt="Logo de Street Art Hunter" width='100rem'>
+			<img class='logo' src="{{ asset('build/images/S.A.H5.png') }}" alt="Logo de Street Art Hunter" width='100rem'>
 			{% if not app.user %}
 				<div class='navbar1-li'>
 					<a class='navbar-log' href="{{ path('app_login') }}"><img src="{{ asset('build/images/connection.png')}}" alt="connection" width='50rem'></a>
@@ -20,7 +20,7 @@
 				<div class='menu-burger'>
 					{% if is_granted('ROLE_ADMIN') %}
 					<li class='navbar1-li'>
-						<a href="">Dashboard</a>
+						<a href="{{ path('app_admin_dashboard') }}">Dashboard</a>
 					</li>
 					{% endif %}
 					<li class='navbar1-li'>
@@ -28,27 +28,27 @@
 					</li>
 					{% if app.user  %}
 						<li class='navbar1-li'>
-							<a href="{{ path('app_user_profil')}}">Profil</a>
+							<a href="{{ path('app_user_profil') }}">Profil</a>
 						</li>
 					{% endif %}
 					<li class='navbar1-li'>
-						<a href="{{ path('app_galery')}}">Galerie</a>
+						<a href="{{ path('app_galery') }}">Galerie</a>
 					</li>
 				</div>
 				{% if app.user  %}
 					<li class='deconnection-navbar1 navbar1-li active' id='active-deco'>
-						<a href="{{ path('app_logout')}}">Déconnexion</a>
+						<a href="{{ path('app_logout') }}">Déconnexion</a>
 					</li>
 				{% else %}
 					{# <li class='deconnection-navbar1 navbar1-li active' id='active-connection'>
 						<a href="{{ path('app_login')}}">Connexion</a>
 					</li> #}
 					<li class='deconnection-navbar1 navbar1-li active' id='active-register'>
-						<a href="{{ path('app_register')}}">Inscription</a>
+						<a href="{{ path('app_register') }}">Inscription</a>
 					</li>
 				{% endif %}
 			</ul>
-			<div class='menu-burger-navnar1' id='burger'><img src="{{ asset('build/images/menu-burger.png')}}" alt="menu-burger" width='50rem'></div>
+			<div class='menu-burger-navnar1' id='burger'><img src="{{ asset('build/images/menu-burger.png') }}" alt="menu-burger" width='50rem'></div>
 			<div>
 				<h1 class="h1-navbar1">Street Art Hunter</h1>
 			</div>
