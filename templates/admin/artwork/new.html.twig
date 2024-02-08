@@ -1,0 +1,14 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Nouvelle oeuvre de street art
+{% endblock %}
+
+{% block body %}
+	<h1 class="h1-new-artwork">Ajouter une nouvelle oeuvre de street art</h1>
+
+	{{ include('admin/artwork/_form.html.twig') }}
+
+	<div class="button-new-artwork-link">
+		<a href="{{ path('app_admin_artwork_index') }}" class="button-new-artwork-2">Retour</a>
+	</div>
+{% endblock %}

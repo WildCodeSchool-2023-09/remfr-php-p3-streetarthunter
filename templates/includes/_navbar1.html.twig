@@ -20,7 +20,7 @@
 				<div class='menu-burger'>
 					{% if is_granted('ROLE_ADMIN') %}
 					<li class='navbar1-li'>
-						<a href="">Dashboard</a>
+						<a href="{{ path('app_admin_dashboard') }}">Dashboard</a>
 					</li>
 					{% endif %}
 					<li class='navbar1-li'>

@@ -10,5 +10,4 @@ import './styles/admin/admin.scss';
 
 // start the Stimulus application
 import './bootstrap';
-
 require('bootstrap');

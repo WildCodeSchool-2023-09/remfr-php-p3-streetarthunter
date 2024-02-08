@@ -2,42 +2,39 @@
 
 namespace App\Form;
 
-use App\Entity\Artist;
 use App\Entity\Artwork;
-use App\Entity\Image;
-use App\Entity\Point;
-use App\Entity\User;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class ArtworkType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('longitude')
-            ->add('latitude')
-            ->add('city')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-        'choice_label' => 'id',
-        'multiple' => true,
+            ->add('longitude', NumberType::class, [
+                'label' => false,
+                'attr' => ['placeholder' => 'Longitude']
             ])
-            ->add('point', EntityType::class, [
-                'class' => Point::class,
-        'choice_label' => 'id',
+            ->add('latitude', NumberType::class, [
+                'label' => false,
+                'attr' => ['placeholder' => 'Latitude']
             ])
-            ->add('image', EntityType::class, [
-                'class' => Image::class,
-        'choice_label' => 'id',
+            ->add('city', TextType::class, [
+                'label' => false,
+                'attr' => ['placeholder' => 'Ville']
             ])
-            ->add('artist', EntityType::class, [
-                'class' => Artist::class,
-        'choice_label' => 'id',
+            ->add('image', ImageType::class, [
+                'label' => false
             ])
-        ;
+            ->add('point', PointType::class, [
+                'label' => false
+            ])
+            ->add('artist', ArtistType::class, [
+                'label' => false
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

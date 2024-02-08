@@ -1,0 +1,47 @@
+.body-dashboard {
+    background-color: var(--blue);
+}
+
+.h1-dashboard {
+    font-family: var(--titleF);
+    margin: 2rem;
+    text-align: center;
+}
+
+.h2-dashboard {
+    font-family: var(--titleF);
+    margin: 1rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.buttons-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-dashboard,
+.btn-top10 {
+    background-color: var(--yellow);
+    font-family: var(--textF);
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    border: transparent;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--red);
+    border-radius: 0.3rem;
+    text-decoration: none;
+    color: var(--black);
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
+.btn-dashboard {
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 4rem;
+}

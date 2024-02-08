@@ -1,3 +1,4 @@
+//start coding by removing this file and adding yours ;)
 @font-face {
     font-family: 'bukhari';
     src: url('../../font/BukhariScript-Regular.ttf') format('truetype')
@@ -6,6 +7,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import '../root.scss';
+@import 'bootstrap/scss/bootstrap';
+@import 'dashboard.scss';
+@import 'artwork.scss';
+@import '_formArtwork.scss';
+@import 'adminUser.scss';
 
 
 *,
@@ -25,3 +31,7 @@ body {
 }
 
 @import 'adminUser.scss';
+
+button:active {
+    transform: var(--clicB);
+}
